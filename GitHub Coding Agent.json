@@ -1,0 +1,33 @@
+{ 
+  "mcpServers": {
+    "context7": {
+      "type": "http",
+      "url": "https://mcp.context7.com/mcp",
+      "tools": ["*"]
+    },
+    "microsoft-docs": {
+      "type": "http",
+      "url": "https://learn.microsoft.com/api/mcp",
+      "tools": ["*"]
+    },
+    "sequentialthinking": {
+      "type": "local",
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "mcp/sequentialthinking"
+      ],
+      "tools": ["*"]
+    },
+    "memory": {
+      "type": "sse",
+      "url": "https://central-memory.mcp.bezalu.com/runtime/webhooks/mcp/sse",
+      "headers": {
+        "x-functions-key": "$functions_mcp_extension_system_key"
+      },
+      "tools": ["*"]
+    }
+  }
+}
